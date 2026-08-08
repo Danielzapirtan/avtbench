@@ -18,6 +18,7 @@ pip install -r requirements.txt
 if test -z $HF_TOKEN; then
 	echo "exportati HF_TOKEN"
 else
+	whispermlx --help
 	whispermlx "$AUDIO_FILE" --device $DEVICE --language en --model large-v3 --output_dir $odir --output_format txt
 	ofile=$odir/$(basename $AUDIO_FILE | sed -e "s/\.m4a//g").txt
 	echo "=== Transcription"
