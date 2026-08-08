@@ -19,7 +19,7 @@ if test -z $HF_TOKEN; then
 	echo "exportati HF_TOKEN"
 else
 	whispermlx --help
-	whispermlx "$AUDIO_FILE" --device $DEVICE --language en --model large-v3 --output_dir $odir --output_format txt
+	whispermlx "$AUDIO_FILE" --device $DEVICE --diarize --diarize_model pyannote/speaker-diarization@2.1 --hf_token $HF_TOKEN --language en --model large-v3 --output_dir $odir --output_format txt
 	ofile=$odir/$(basename $AUDIO_FILE | sed -e "s/\.mp3//g").txt
 	echo "=== Transcription"
 	cat $ofile
