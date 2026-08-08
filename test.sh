@@ -22,8 +22,8 @@ if test -z $HF_TOKEN; then
 	echo "exportati HF_TOKEN"
 else
 	whispermlx --help
-	whispermlx "$AUDIO_FILE" --device $DEVICE --diarize --hf_token $HF_TOKEN --language en --model large-v3 --output_dir $odir --output_format txt
-	ofile=$odir/$(basename $AUDIO_FILE | sed -e "s/\.mp3//g").txt
+	whispermlx "$AUDIO_FILE" --compression_ratio_threshold 2.4 --condition_on_previous_text False --device $DEVICE --diarize --hallucination_silence_threshold 2.0 --hf_token $HF_TOKEN --language en --logprob_threshold -1.0 --model large-v3 --no_speech_threshold 0.6 --output_dir $odir --output_format json --path_or_hf_repo "mlx-community/whisper-large-v3-mlx" --word_timestamps True
+	ofile=$odir/$(basename $AUDIO_FILE | sed -e "s/\.mp3//g").json
 	echo "=== Transcription"
 	cat $ofile
 	echo "==="
