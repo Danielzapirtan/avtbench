@@ -15,6 +15,6 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          source test.sh example.m4a
+          source test.sh example.mp3
         timeout-minutes: 300
 
