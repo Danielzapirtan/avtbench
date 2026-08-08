@@ -15,9 +15,6 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          TOOL=mlx
-          FRAMEWORK=gha
-          cd $TOOL/$FRAMEWORK
-          source test.sh ../../samples/default.m4a
+          source test.sh example.m4a
         timeout-minutes: 300
 
