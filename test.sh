@@ -4,6 +4,7 @@ AUDIO_FILE="$1"
 DEVICE=cpu
 IVRIT=ivrit-ai/pyannote-speaker-diarization-3.1
 ALTPYA=pyannote/speaker-diarization-2.1
+PYA=pyannote/speaker-diarization-community-1
 odir=$HOME/transcriptions
 VER=3.12
 
@@ -21,7 +22,7 @@ if test -z $HF_TOKEN; then
 	echo "exportati HF_TOKEN"
 else
 	whispermlx --help
-	whispermlx "$AUDIO_FILE" --device $DEVICE --hf_token $HF_TOKEN --language en --model large-v3 --output_dir $odir --output_format txt
+	whispermlx "$AUDIO_FILE" --device $DEVICE --diarize --hf_token $HF_TOKEN --language en --model large-v3 --output_dir $odir --output_format txt
 	ofile=$odir/$(basename $AUDIO_FILE | sed -e "s/\.mp3//g").txt
 	echo "=== Transcription"
 	cat $ofile
