@@ -2,6 +2,8 @@
 
 AUDIO_FILE="$1"
 DEVICE=cpu
+IVRIT=ivrit-ai/pyannote-speaker-diarization-3.1
+ALTPYA=pyannote/speaker-diarization@2.1
 odir=$HOME/transcriptions
 VER=3.12
 
