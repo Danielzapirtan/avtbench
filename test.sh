@@ -26,7 +26,6 @@ else
 	ofile=$odir/$(basename $AUDIO_FILE | sed -e "s/\.m4a//g").json
 	echo "=== Transcription"
 	jq . $ofile
-	cat $ofile
 	echo "==="
 fi
 
