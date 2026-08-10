@@ -1,8 +1,0 @@
-2026-08-09T13:41:55.0140000Z Job is about to start running on the hosted runner: GitHub Actions 1000020030
-2026-08-09T13:41:55.0110000Z Requested labels: macos-latest
-2026-08-09T13:41:55.0110000Z Job defined at: Danielzapirtan/avtbench/.github/workflows/transcribe.yml@refs/heads/main
-2026-08-09T13:41:55.0110000Z Waiting for a runner to pick up this job...
-2026-08-09T13:41:55.0130000Z Job is waiting for a hosted runner to come online.
-2026-08-09T13:41:55.0100000Z Evaluating test-transcription.if
-2026-08-09T13:41:55.0100000Z Evaluating: success()
-2026-08-09T13:41:55.0100000Z Result: true
