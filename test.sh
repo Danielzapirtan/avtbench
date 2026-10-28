@@ -1,10 +1,6 @@
 #! /usr/bin/env bash
 
-for AUDIO_FILE in input*.mp4; do
 DEVICE=cpu
-IVRIT=ivrit-ai/pyannote-speaker-diarization-3.1
-ALTPYA=pyannote/speaker-diarization-2.1
-PYA=pyannote/speaker-diarization-community-1
 odir=$HOME/transcriptions
 VER=3.12
 
@@ -18,7 +14,8 @@ export VIRTUAL_ENV
 python$VER -m pip install --upgrade pip
 brew install ffmpeg-full
 pip install -r requirements.txt
-	whispermlx --help
+whispermlx --help
+for AUDIO_FILE in input*.mp4; do
 	whispermlx "$AUDIO_FILE" --compression_ratio_threshold 2.4 --condition_on_previous_text False --device $DEVICE --language ro --logprob_threshold -1.0 --model large-v3 --no_speech_threshold 0.6 --output_dir $odir --output_format txt
 	ofile=$odir/$(basename $AUDIO_FILE | sed -e "s/\.mp4//g").txt
 	echo "=== Transcription"
