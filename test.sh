@@ -18,14 +18,10 @@ export VIRTUAL_ENV
 python$VER -m pip install --upgrade pip
 brew install ffmpeg-full
 pip install -r requirements.txt
-if test -z $HF_TOKEN; then
-	echo "exportati HF_TOKEN"
-else
 	whispermlx --help
 	whispermlx "$AUDIO_FILE" --compression_ratio_threshold 2.4 --condition_on_previous_text False --device $DEVICE --language ro --logprob_threshold -1.0 --model large-v3 --no_speech_threshold 0.6 --output_dir $odir --output_format json
 	ofile=$odir/$(basename $AUDIO_FILE | sed -e "s/\.m4a//g").json
 	echo "=== Transcription"
 	jq . $ofile
 	echo "==="
-fi
 done
