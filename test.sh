@@ -14,7 +14,7 @@ export VIRTUAL_ENV
 python$VER -m pip install --upgrade pip
 brew install ffmpeg-full
 pip install -r requirements.txt
-pip install "whispermlx==3.14.0" "pyannote-audio>=4.0.0" "torchaudio~=2.8.0" "torchvision~=0.23.0" "torch~=2.8.0"
+pip install "whispermlx==3.14.0" "pyannote-audio>=4.0.0" "torchaudio~=2.8.0" "torchcodec~=0.7.0" "torchvision~=0.23.0" "torch~=2.8.0"
 pip check
 whispermlx --help
 for AUDIO_FILE in input*.mp4; do
