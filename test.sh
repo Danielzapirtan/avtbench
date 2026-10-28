@@ -14,7 +14,6 @@ export VIRTUAL_ENV
 python$VER -m pip install --upgrade pip
 brew install ffmpeg-full
 pip install -r requirements.txt
-python -m pip install --upgrade pip
 python -m pip install --no-deps whispermlx
 python -m pip show whispermlx \
   | sed -n 's/^Requires: //p' \
