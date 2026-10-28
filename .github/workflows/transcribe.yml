@@ -12,8 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Run transcription
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        #        env:
+        # HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           source test.sh example.m4a
         timeout-minutes: 300
