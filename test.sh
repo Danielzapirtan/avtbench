@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-AUDIO_FILE="$1"
+for AUDIO_FILE in input*.mp4; do
 DEVICE=cpu
 IVRIT=ivrit-ai/pyannote-speaker-diarization-3.1
 ALTPYA=pyannote/speaker-diarization-2.1
@@ -28,4 +28,4 @@ else
 	jq . $ofile
 	echo "==="
 fi
-
+done
