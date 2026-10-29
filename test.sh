@@ -9,7 +9,8 @@ if ! command -v python$VER &>/dev/null; then
 fi
 mkdir -p $odir
 rm -rf .venv
-brew install ffmpeg
+brew install ffmpeg@7
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/opt/ffmpeg@7/lib
 python$VER -m venv .venv
 . .venv/bin/activate
 export VIRTUAL_ENV
