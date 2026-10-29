@@ -8,12 +8,15 @@ if ! command -v python$VER &>/dev/null; then
 	brew install python@$VER
 fi
 mkdir -p $odir
+rm -rf .venv
+brew install ffmpeg
 python$VER -m venv .venv
 source .venv/bin/activate
 export VIRTUAL_ENV
 python$VER -m pip install --upgrade pip
-brew install ffmpeg
+rm -rf requirements.lock.txt
 bash resolve_install.sh requirements_template.txt .venv
+rm -rf requirements.lock.txt
 bash resolve_install.sh requirements_template_mlx.txt .venv
 pip check
 source .venv/bin/activate
