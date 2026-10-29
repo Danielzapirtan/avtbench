@@ -1,3 +1,2 @@
-whispermlx
 soundfile
 numpy
