@@ -13,5 +13,6 @@ pypdf
 python-docx
 reportlab
 requests
+soundfile
 #whispermlx
 yt-dlp
